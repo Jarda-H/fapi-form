@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAPI formulář</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/lib/nice-select2.css">
+    <link rel="stylesheet" href="./static/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form class="page data">
+            <h1>Osobní informace</h1>
+            <div class="row">
+                <div class="field w-50">
+                    <label for="fname">Jméno</label>
+                    <input type="text" autocomplete="name" id="fname" required>
+                </div>
+                <div class="field w-50">
+                    <label for="sname">Příjmení</label>
+                    <input type="text" autocomplete="given-name" id="sname" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="field w-50">
+                    <label for="email">Email</label>
+                    <input type="email" autocomplete="email" id="email" required>
+                </div>
+                <div class="field w-50">
+                    <label for="tel">Telefon</label>
+                    <input type="tel" autocomplete="tel" id="tel" required>
+                </div>
+            </div>
+            <h1>Fakturační údaje</h1>
+            <div class="row">
+                <div class="field w-50">
+                    <label for="street">Ulice a č. p.</label>
+                    <input type="text" autocomplete="street-address" id="street" required>
+                </div>
+                <div class="field w-50">
+                    <label for="address">Obec</label>
+                    <input type="text" autocomplete="address-level2" id="address" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="field w-50">
+                    <label for="postal-code">PSČ</label>
+                    <input type="number" autocomplete="postal-code" id="postal-code" required>
+                </div>
+                <div class="field w-50">
+                    <label for="country">Stát</label>
+                    <input type="text" autocomplete="country" id="country" required>
+                </div>
+            </div>
+
+            <h1>Produkt</h1>
+            <div class="row">
+                <div class="field w-40">
+                    <label for="product-name">Název produktu</label>
+                    <input type="text" autocomplete="off" id="product-name" required>
+                </div>
+                <div class="field w-30">
+                    <label for="pieces">Počet kusů</label>
+                    <div class="clickable-counter">
+                        <div class="down">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <title>minus</title>
+                                <path d="M19,13H5V11H19V13Z" />
+                            </svg>
+                        </div>
+                        <input type="text" id="pieces" value="1" required>
+                        <div class="up">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <title>plus</title>
+                                <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="field w-30">
+                    <label for="price">Cena za kus v CZK</label>
+                    <input type="text" autocomplete="off" id="price" required>
+                </div>
+            </div>
+            <div class="float-r">
+                <button class="btn continue">Pokračovat</button>
+            </div>
+        </form>
+        <div class="page recap">
+            <h1>Rekapitulace</h1>
+            <div class="mb-1">
+                <div class="info">...</div>
+                <p>Cílová měna:</p>
+            </div>
+            <div class="curr-selector">
+                <select>
+                    <option value="CZK" selected>Česká republika (CZK)</option>
+                </select>
+            </div>
+            <div class="float-r">
+                <button class="btn send">Odeslat</button>
+            </div>
+        </div>
+    </div>
+    <script src="./static/lib/nice-select2.js"></script>
+    <script src="./static/main.js"></script>
+</body>
+
+</html>
